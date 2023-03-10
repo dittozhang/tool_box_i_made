@@ -1,3 +1,19 @@
+import time
+from getpass import getpass
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
+
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+wait_a_sec = 0.5
+driver.get("https://web.telegram.org/k/")
+# login info
+country = "Taiwan"
+phone_number = "+886 983 003 752"
+
+
 def found_element(by_what: object, element_name: str):
     while True:
         try:
